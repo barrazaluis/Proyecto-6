@@ -24,3 +24,7 @@ app.listen(process.env.PORT, () =>
 app.get('/', (req, res) => {
   res.json({ message: 'API funcionando correctamente' });
 });
+
+const { swaggerUi, swaggerSpec } = require("./swagger")
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
