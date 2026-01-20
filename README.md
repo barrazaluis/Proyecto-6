@@ -39,3 +39,4 @@ Los usuarios pueden registrarse, iniciar sesión y administrar productos (crear,
 ```bash
 git clone https://github.com/barrazaluis/Proyecto-6.git
 
+Saludos
