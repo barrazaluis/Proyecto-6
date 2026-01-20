@@ -42,7 +42,7 @@ const {
  *       201:
  *         description: Usuario registrado correctamente
  */
-router.post("/register", register)
+router.post("/api/user/register", register)
 
 /**
  * @swagger
@@ -68,7 +68,7 @@ router.post("/register", register)
  *       200:
  *         description: Retorna token JWT
  */
-router.post("/login", login)
+router.post("/api/user/login", login)
 
 /**
  * @swagger
@@ -84,7 +84,7 @@ router.post("/login", login)
  *       401:
  *         description: Token inválido o no enviado
  */
-router.get("/verifytoken", auth, verifyToken)
+router.get("/api/user/verifytoken", auth, verifyToken)
 
 /**
  * @swagger
@@ -111,6 +111,6 @@ router.get("/verifytoken", auth, verifyToken)
  *       200:
  *         description: Usuario actualizado
  */
-router.put("/update", auth, updateUser)
+router.put("/api/user/update", auth, updateUser)
 
 module.exports = router

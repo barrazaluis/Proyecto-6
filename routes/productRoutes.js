@@ -42,7 +42,7 @@ const {
  *       201:
  *         description: Producto creado
  */
-router.post("/create", auth, createProduct)
+router.post("/api/product/create", auth, createProduct)
 
 /**
  * @swagger
@@ -54,7 +54,7 @@ router.post("/create", auth, createProduct)
  *       200:
  *         description: Lista de productos
  */
-router.get("/readall", readAll)
+router.get("/api/product/readall", readAll)
 
 /**
  * @swagger
@@ -74,7 +74,7 @@ router.get("/readall", readAll)
  *       404:
  *         description: Producto no encontrado
  */
-router.get("/readone/:id", readOne)
+router.get("/api/product/readone/:id", readOne)
 
 /**
  * @swagger
@@ -100,7 +100,7 @@ router.get("/readone/:id", readOne)
  *       200:
  *         description: Producto actualizado
  */
-router.put("/update/:id", auth, updateProduct)
+router.put("/api/product/update/:id", auth, updateProduct)
 
 /**
  * @swagger
@@ -120,6 +120,6 @@ router.put("/update/:id", auth, updateProduct)
  *       200:
  *         description: Producto eliminado
  */
-router.delete("/delete/:id", auth, deleteProduct)
+router.delete("/api/product/delete/:id", auth, deleteProduct)
 
 module.exports = router
