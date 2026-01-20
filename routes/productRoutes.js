@@ -1,13 +1,13 @@
-const express = require("express")
-const router = express.Router()
-const auth = require("../middleware/authorization")
+const express = require("express");
+const router = express.Router();
+const auth = require("../middleware/authorization");
 const {
   createProduct,
   readAll,
   readOne,
   updateProduct,
   deleteProduct
-} = require("../controllers/productController")
+} = require("../controllers/productController");
 
 /**
  * @swagger
@@ -18,7 +18,7 @@ const {
 
 /**
  * @swagger
- * /create:
+ * /api/product/create:
  *   post:
  *     summary: Crear un producto
  *     tags: [Products]
@@ -42,11 +42,11 @@ const {
  *       201:
  *         description: Producto creado
  */
-router.post("/api/product/create", auth, createProduct)
+router.post("/create", auth, createProduct);
 
 /**
  * @swagger
- * /readall:
+ * /api/product/readall:
  *   get:
  *     summary: Obtener todos los productos
  *     tags: [Products]
@@ -54,11 +54,11 @@ router.post("/api/product/create", auth, createProduct)
  *       200:
  *         description: Lista de productos
  */
-router.get("/api/product/readall", readAll)
+router.get("/readall", readAll);
 
 /**
  * @swagger
- * /readone/{id}:
+ * /api/product/readone/{id}:
  *   get:
  *     summary: Obtener un producto por ID
  *     tags: [Products]
@@ -74,11 +74,11 @@ router.get("/api/product/readall", readAll)
  *       404:
  *         description: Producto no encontrado
  */
-router.get("/api/product/readone/:id", readOne)
+router.get("/readone/:id", readOne);
 
 /**
  * @swagger
- * /update/{id}:
+ * /api/product/update/{id}:
  *   put:
  *     summary: Actualizar producto
  *     tags: [Products]
@@ -100,11 +100,11 @@ router.get("/api/product/readone/:id", readOne)
  *       200:
  *         description: Producto actualizado
  */
-router.put("/api/product/update/:id", auth, updateProduct)
+router.put("/update/:id", auth, updateProduct);
 
 /**
  * @swagger
- * /delete/{id}:
+ * /api/product/delete/{id}:
  *   delete:
  *     summary: Eliminar producto
  *     tags: [Products]
@@ -120,6 +120,6 @@ router.put("/api/product/update/:id", auth, updateProduct)
  *       200:
  *         description: Producto eliminado
  */
-router.delete("/api/product/delete/:id", auth, deleteProduct)
+router.delete("/delete/:id", auth, deleteProduct);
 
-module.exports = router
+module.exports = router;

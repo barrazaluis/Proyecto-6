@@ -1,12 +1,12 @@
-const express = require("express")
-const router = express.Router()
-const auth = require("../middleware/authorization")
+const express = require("express");
+const router = express.Router();
+const auth = require("../middleware/authorization");
 const {
   register,
   login,
   verifyToken,
   updateUser
-} = require("../controllers/userController")
+} = require("../controllers/userController");
 
 /**
  * @swagger
@@ -17,7 +17,7 @@ const {
 
 /**
  * @swagger
- * /register:
+ * /api/user/register:
  *   post:
  *     summary: Registrar un nuevo usuario
  *     tags: [Users]
@@ -42,11 +42,11 @@ const {
  *       201:
  *         description: Usuario registrado correctamente
  */
-router.post("/api/user/register", register)
+router.post("/register", register);
 
 /**
  * @swagger
- * /login:
+ * /api/user/login:
  *   post:
  *     summary: Iniciar sesión
  *     tags: [Users]
@@ -68,11 +68,11 @@ router.post("/api/user/register", register)
  *       200:
  *         description: Retorna token JWT
  */
-router.post("/api/user/login", login)
+router.post("/login", login);
 
 /**
  * @swagger
- * /verifytoken:
+ * /api/user/verifytoken:
  *   get:
  *     summary: Verificar token del usuario
  *     tags: [Users]
@@ -84,11 +84,11 @@ router.post("/api/user/login", login)
  *       401:
  *         description: Token inválido o no enviado
  */
-router.get("/api/user/verifytoken", auth, verifyToken)
+router.get("/verifytoken", auth, verifyToken);
 
 /**
  * @swagger
- * /update:
+ * /api/user/update:
  *   put:
  *     summary: Actualizar datos del usuario
  *     tags: [Users]
@@ -111,6 +111,6 @@ router.get("/api/user/verifytoken", auth, verifyToken)
  *       200:
  *         description: Usuario actualizado
  */
-router.put("/api/user/update", auth, updateUser)
+router.put("/update", auth, updateUser);
 
-module.exports = router
+module.exports = router;
